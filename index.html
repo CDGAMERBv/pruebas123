@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votación J.V.A</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Indicador de carga (loader) -->
+    <div id="loader" class="loader"></div>
+
+    <div id="content" style="display: none;">
+        <div class="container">
+            <h1>Votación 2024</h1>
+            <form id="votingForm">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required>
+                
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" class="long-input" readonly required>
+                
+                <h3>Elige tu opción:</h3>
+
+                <div class="row">
+                    <!-- Columna para las candidatas -->
+                    <div class="column" id="womenCandidates">
+                        <h3>Candidatas</h3>
+                        <!-- Las candidatas se agregarán dinámicamente aquí -->
+                        <div class="candidate-card">
+                            <img src="ruta_de_imagen_candidata1" alt="Candidata 1">
+                            <h4>Candidata 1</h4>
+                            <input type="radio" name="womanVote" value="Candidata 1" required> Votar por Candidata 1
+                        </div>
+                        <!-- Repetir para las demás candidatas -->
+                        <div class="candidate-card">
+                            <img src="ruta_de_imagen_candidata2" alt="Candidata 2">
+                            <h4>Candidata 2</h4>
+                            <input type="radio" name="womanVote" value="Candidata 2"> Votar por Candidata 2
+                        </div>
+                        <!-- Agrega más candidatas según sea necesario -->
+                    </div>
+                    
+                    <!-- Columna para los candidatos -->
+                    <div class="column" id="menCandidates">
+                        <h3>Candidatos</h3>
+                        <!-- Los candidatos se agregarán dinámicamente aquí -->
+                        <div class="candidate-card">
+                            <img src="ruta_de_imagen_candidato1" alt="Candidato 1">
+                            <h4>Candidato 1</h4>
+                            <input type="radio" name="manVote" value="Candidato 1" required> Votar por Candidato 1
+                        </div>
+                        <!-- Repetir para los demás candidatos -->
+                        <div class="candidate-card">
+                            <img src="ruta_de_imagen_candidato2" alt="Candidato 2">
+                            <h4>Candidato 2</h4>
+                            <input type="radio" name="manVote" value="Candidato 2"> Votar por Candidato 2
+                        </div>
+                        <!-- Agrega más candidatos según sea necesario -->
+                    </div>
+                </div>
+
+                <button type="submit">Votar</button>
+            </form>
+
+            <!-- Formulario para ingresar la contraseña del administrador -->
+            <h3>Ver Resultados (Solo para el Creador)</h3>
+            <input type="password" id="adminPassword" placeholder="Contraseña">
+            <button onclick="checkPassword()">Ver Resultados</button>
+
+            <div id="result"></div>
+            <button id="copyButton" style="display:none;" onclick="copyResults()">Copiar Resumen</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
